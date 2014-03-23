@@ -1,0 +1,7 @@
+*
+!/.emacs
+!/.emacs.d
+!/.emacs.d/term
+!/.emacs.d/term/screen-256color.el
+!/.gitignore.d
+!/.gitignore.d/emacs
