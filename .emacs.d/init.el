@@ -1,5 +1,3 @@
-; Add personal directory to load-path
-(add-to-list 'load-path "~/.emacs.d")
 ; Show column numbers in the mode line
 (column-number-mode 1)
 (setq backup-inhibited t)
