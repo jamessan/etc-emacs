@@ -38,6 +38,15 @@
            (color-theme-comidia)
          (color-theme-calm-forest)))))
 
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (and (buffer-filename)
+                       (string-match "safe/catmerge" (buffer-file-name)))
+                (c-set-style "stroustrup")
+                (set-variable 'indent-tabs-mode t)
+                (set-variable 'tab-width 4)
+                (set-variable 'c-basic-offset 4))))
+
 ; Prefer CPerl
 (defalias 'perl-mode 'cperl-mode)
 (add-hook 'cperl-mode-hook
