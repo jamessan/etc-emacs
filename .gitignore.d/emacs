@@ -1,5 +1,6 @@
 *
 !/.emacs.d
+!/.emacs.d/bindings.el
 !/.emacs.d/color-theme
 !/.emacs.d/color-theme/AUTHORS
 !/.emacs.d/color-theme/BUGS

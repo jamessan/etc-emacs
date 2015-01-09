@@ -6,6 +6,8 @@
 (setq uniquify-buffer-name-style 'post-forward)
 (require 'uniquify)
 
+(load-file "~/.emacs.d/bindings.el")
+
 (when (display-graphic-p)
   ; Disable user of the toolbar
   (tool-bar-mode 0)
