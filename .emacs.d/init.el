@@ -23,6 +23,13 @@
 ; Show bad whitespace by default
 (setq-default show-trailing-whitespace t)
 
+; Auto-detect indent settings
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/dtrt-indent"))
+(require 'dtrt-indent)
+; Only require 50% more lines for 2nd best guess over 1st guess
+(setq-default dtrt-indent-min-indent-superiority 50.0)
+(dtrt-indent-mode t)
+
 ; Just in case it's not already installed system-wide
 (when (and (not (require 'color-theme nil t))
            (file-exists-p (expand-file-name "~/.emacs.d/color-theme")))
