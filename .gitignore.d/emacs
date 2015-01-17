@@ -19,6 +19,12 @@
 !/.emacs.d/color-theme/themes
 !/.emacs.d/color-theme/themes/color-theme-example.el
 !/.emacs.d/color-theme/themes/color-theme-library.el
+!/.emacs.d/dtrt-indent
+!/.emacs.d/dtrt-indent/dtrt-indent-diag.el
+!/.emacs.d/dtrt-indent/dtrt-indent.el
+!/.emacs.d/dtrt-indent/dtrt-indent-test.el
+!/.emacs.d/dtrt-indent/dtrt-indent.texi
+!/.emacs.d/dtrt-indent/.gitignore
 !/.emacs.d/init.el
 !/.emacs.d/term
 !/.emacs.d/term/screen-256color.el
