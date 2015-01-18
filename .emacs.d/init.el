@@ -17,6 +17,8 @@
 ; Always disable the menu bar.  It can be accessed via hotkeys, if needed
 (menu-bar-mode 0)
 
+(setq inhibit-startup-screen t)
+
 ; Default indent of 4 spaces
 (setq-default c-basic-offset 4)
 ; Use spaces instead of tabs
