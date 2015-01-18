@@ -25,8 +25,10 @@
 !/.emacs.d/dtrt-indent/dtrt-indent-test.el
 !/.emacs.d/dtrt-indent/dtrt-indent.texi
 !/.emacs.d/dtrt-indent/.gitignore
+!/.emacs.d/enablers.el
 !/.emacs.d/init.el
 !/.emacs.d/term
 !/.emacs.d/term/screen-256color.el
+!/.emacs.d/work.el
 !/.gitignore.d
 !/.gitignore.d/emacs

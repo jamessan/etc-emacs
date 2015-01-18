@@ -43,15 +43,6 @@
       (color-theme-comidia)
     (color-theme-calm-forest)))
 
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (when (and (buffer-file-name)
-                       (string-match "safe/catmerge" (buffer-file-name)))
-                (c-set-style "stroustrup")
-                (set-variable 'indent-tabs-mode t)
-                (set-variable 'tab-width 4)
-                (set-variable 'c-basic-offset 4))))
-
 ; Prefer CPerl
 (defalias 'perl-mode 'cperl-mode)
 (add-hook 'cperl-mode-hook
@@ -60,3 +51,7 @@
                   cperl-close-paren-offset -4
                   cperl-continued-statement-offset 0
                   cperl-indent-parens-as-block t)))
+
+(let ((case-fold-search t))
+  (when (string-match "mccoyj1" (user-login-name))
+    (load-file "~/.emacs.d/work.el")))
