@@ -47,7 +47,7 @@
 
 (add-hook 'c-mode-common-hook
           (lambda ()
-            (when (and (buffer-filename)
+            (when (and (buffer-file-name)
                        (string-match "safe/catmerge" (buffer-file-name)))
                 (c-set-style "stroustrup")
                 (set-variable 'indent-tabs-mode t)
