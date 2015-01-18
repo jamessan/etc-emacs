@@ -7,6 +7,7 @@
 (require 'uniquify)
 
 (load-file "~/.emacs.d/bindings.el")
+(load-file "~/.emacs.d/enablers.el")
 
 (when (display-graphic-p)
   ; Disable user of the toolbar
@@ -62,5 +63,3 @@
                   cperl-close-paren-offset -4
                   cperl-continued-statement-offset 0
                   cperl-indent-parens-as-block t)))
-(put 'set-goal-column 'disabled nil)
-(put 'narrow-to-region 'disabled nil)
