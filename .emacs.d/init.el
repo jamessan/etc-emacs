@@ -25,6 +25,10 @@
 (setq-default indent-tabs-mode nil)
 ; Show bad whitespace by default
 (setq-default show-trailing-whitespace t)
+(eval-after-load "c-mode"
+  '(progn
+     (add-to-list c-default-style (cons c-mode "k&r"))
+     (add-to-list c-default-style (cons c++-mode "stroustrup"))))
 
 ; Auto-detect indent settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/dtrt-indent"))
