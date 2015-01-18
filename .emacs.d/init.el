@@ -32,19 +32,16 @@
 (dtrt-indent-mode t)
 
 ; Just in case it's not already installed system-wide
-(when (and (not (require 'color-theme nil t))
-           (file-exists-p (expand-file-name "~/.emacs.d/color-theme")))
+(when (not (require 'color-theme nil t))
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/color-theme")))
 (require 'color-theme)
-(eval-after-load 'color-theme
-  ; Newer versions of color-theme require calling this initialize function first
-  '(progn
-     (when (functionp 'color-theme-initialize)
-       (color-theme-initialize))
-     (let (f (framep (selected-frame)))
-       (if (eq f 'w32)
-           (color-theme-comidia)
-         (color-theme-calm-forest)))))
+; Newer versions of color-theme require calling this initialize function first
+(when (functionp 'color-theme-initialize)
+  (color-theme-initialize))
+(let (f (framep (selected-frame)))
+  (if (eq f 'w32)
+      (color-theme-comidia)
+    (color-theme-calm-forest)))
 
 (add-hook 'c-mode-common-hook
           (lambda ()
