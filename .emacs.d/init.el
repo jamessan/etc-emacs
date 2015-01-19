@@ -44,10 +44,7 @@
 ; Newer versions of color-theme require calling this initialize function first
 (when (functionp 'color-theme-initialize)
   (color-theme-initialize))
-(let (f (framep (selected-frame)))
-  (if (eq f 'w32)
-      (color-theme-comidia)
-    (color-theme-calm-forest)))
+(color-theme-taylor)
 
 ; Prefer CPerl
 (defalias 'perl-mode 'cperl-mode)
