@@ -61,3 +61,11 @@
 (let ((case-fold-search t))
   (when (string-match "mccoyj1" (user-login-name))
     (load-file "~/.emacs.d/work.el")))
+
+(defun command-line-3way-merge (switch)
+  (let ((ancestor (pop command-line-args-left))
+        (file1 (pop command-line-args-left))
+        (file2 (pop command-line-args-left))
+        (output (pop command-line-args-left)))
+    (ediff-merge-with-ancestor file1 file2 ancestor nil output)))
+(add-to-list 'command-switch-alist '("-3way-merge" . command-line-3way-merge))
