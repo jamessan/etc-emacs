@@ -6,6 +6,11 @@
 
 (load (locate-user-emacs-file "bindings.el"))
 (load (locate-user-emacs-file "enablers.el"))
+(add-to-list 'load-path (locate-user-emacs-file "dtrt-indent"))
+
+(let ((case-fold-search t))
+  (when (string-match "mccoyj1" (user-login-name))
+    (load (locate-user-emacs-file "work.el"))))
 
 ;; UI
 (dolist (mode '(tool-bar-mode scroll-bar-mode menu-bar-mode blink-cursor-mode))
@@ -27,13 +32,8 @@
      (add-to-list 'c-default-style (cons 'c-mode "k&r"))
      (add-to-list 'c-default-style (cons 'c++-mode "stroustrup"))))
 
-; Auto-detect indent settings
-(add-to-list 'load-path (locate-user-emacs-file "dtrt-indent"))
-(require 'dtrt-indent)
-; Only require 50% more lines for 2nd best guess over 1st guess
+(autoload 'dtrt-indent-mode "dtrt-indent" nil 'interactive)
 (setq-default dtrt-indent-min-indent-superiority 50.0)
-(dtrt-indent-mode t)
-
 
 ; Prefer CPerl
 (defalias 'perl-mode 'cperl-mode)
@@ -43,10 +43,6 @@
                   cperl-close-paren-offset -4
                   cperl-continued-statement-offset 0
                   cperl-indent-parens-as-block t)))
-
-(let ((case-fold-search t))
-  (when (string-match "mccoyj1" (user-login-name))
-    (load (locate-user-emacs-file "work.el"))))
 
 (defun command-line-3way-merge (switch)
   (let ((ancestor (pop command-line-args-left))
