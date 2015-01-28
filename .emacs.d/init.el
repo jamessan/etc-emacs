@@ -16,6 +16,7 @@
   (scroll-bar-mode 0))
 ; Always disable the menu bar.  It can be accessed via hotkeys, if needed
 (menu-bar-mode 0)
+(load-theme 'wombat)
 
 (setq inhibit-startup-screen t)
 
@@ -38,14 +39,6 @@
 (setq-default dtrt-indent-min-indent-superiority 50.0)
 (dtrt-indent-mode t)
 
-; Just in case it's not already installed system-wide
-(when (not (require 'color-theme nil t))
-  (add-to-list 'load-path (locate-user-emacs-file "color-theme")))
-(require 'color-theme)
-; Newer versions of color-theme require calling this initialize function first
-(when (functionp 'color-theme-initialize)
-  (color-theme-initialize))
-(color-theme-taylor)
 
 ; Prefer CPerl
 (defalias 'perl-mode 'cperl-mode)
