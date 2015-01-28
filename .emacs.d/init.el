@@ -1,5 +1,3 @@
-; Show column numbers in the mode line
-(column-number-mode 1)
 (setq backup-inhibited t)
 
 ; Enable uniquify for better buffer names
@@ -9,13 +7,10 @@
 (load (locate-user-emacs-file "bindings.el"))
 (load (locate-user-emacs-file "enablers.el"))
 
-(when (display-graphic-p)
-  ; Disable user of the toolbar
-  (tool-bar-mode 0)
-  ; Disable use of the scrollbar
-  (scroll-bar-mode 0))
-; Always disable the menu bar.  It can be accessed via hotkeys, if needed
-(menu-bar-mode 0)
+;; UI
+(dolist (mode '(tool-bar-mode scroll-bar-mode menu-bar-mode blink-cursor-mode))
+  (when (fboundp mode) (funcall mode -1)))
+(column-number-mode 1)
 (load-theme 'wombat)
 
 (setq inhibit-startup-screen t)
