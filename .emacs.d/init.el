@@ -6,8 +6,8 @@
 (setq uniquify-buffer-name-style 'post-forward)
 (require 'uniquify)
 
-(load-file "~/.emacs.d/bindings.el")
-(load-file "~/.emacs.d/enablers.el")
+(load (locate-user-emacs-file "bindings.el"))
+(load (locate-user-emacs-file "enablers.el"))
 
 (when (display-graphic-p)
   ; Disable user of the toolbar
@@ -32,7 +32,7 @@
      (add-to-list 'c-default-style (cons 'c++-mode "stroustrup"))))
 
 ; Auto-detect indent settings
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/dtrt-indent"))
+(add-to-list 'load-path (locate-user-emacs-file "dtrt-indent"))
 (require 'dtrt-indent)
 ; Only require 50% more lines for 2nd best guess over 1st guess
 (setq-default dtrt-indent-min-indent-superiority 50.0)
@@ -40,7 +40,7 @@
 
 ; Just in case it's not already installed system-wide
 (when (not (require 'color-theme nil t))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/color-theme")))
+  (add-to-list 'load-path (locate-user-emacs-file "color-theme")))
 (require 'color-theme)
 ; Newer versions of color-theme require calling this initialize function first
 (when (functionp 'color-theme-initialize)
@@ -58,7 +58,7 @@
 
 (let ((case-fold-search t))
   (when (string-match "mccoyj1" (user-login-name))
-    (load-file "~/.emacs.d/work.el")))
+    (load (locate-user-emacs-file "work.el"))))
 
 (defun command-line-3way-merge (switch)
   (let ((ancestor (pop command-line-args-left))
