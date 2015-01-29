@@ -20,12 +20,11 @@
 (column-number-mode 1)
 (load-theme 'wombat)
 
-; Default indent of 4 spaces
-(setq-default c-basic-offset 4)
-; Use spaces instead of tabs
-(setq-default indent-tabs-mode nil)
-; Show bad whitespace by default
-(setq-default show-trailing-whitespace t)
+;; whitespace
+(setq-default c-basic-offset 4
+              indent-tabs-mode nil
+              indicate-unused-lines t
+              whitespace-style '(face tabs trailing newline space-before-tab::tab))
 
 (eval-after-load "cc-mode"
   '(progn
