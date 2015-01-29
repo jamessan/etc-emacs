@@ -1,4 +1,6 @@
+;; Annoyances
 (setq backup-inhibited t)
+(setq inhibit-startup-screen t)
 
 ; Enable uniquify for better buffer names
 (setq uniquify-buffer-name-style 'post-forward)
@@ -17,8 +19,6 @@
   (when (fboundp mode) (funcall mode -1)))
 (column-number-mode 1)
 (load-theme 'wombat)
-
-(setq inhibit-startup-screen t)
 
 ; Default indent of 4 spaces
 (setq-default c-basic-offset 4)
