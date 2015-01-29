@@ -26,10 +26,14 @@
               indicate-unused-lines t
               whitespace-style '(face tabs trailing newline space-before-tab::tab))
 
+;; Programming
 (eval-after-load "cc-mode"
   '(progn
      (add-to-list 'c-default-style (cons 'c-mode "k&r"))
      (add-to-list 'c-default-style (cons 'c++-mode "stroustrup"))))
+(add-hook 'prog-mode-hook 'show-paren-mode)
+(add-hook 'prog-mode-hook 'whitespace-mode)
+(add-hook 'prog-mode-hook 'dtrt-indent-mode)
 
 (autoload 'dtrt-indent-mode "dtrt-indent" nil 'interactive)
 (setq-default dtrt-indent-min-indent-superiority 50.0)
