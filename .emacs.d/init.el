@@ -38,12 +38,11 @@
 (autoload 'dtrt-indent-mode "dtrt-indent" nil 'interactive)
 (setq-default dtrt-indent-min-indent-superiority 50.0)
 
-; Prefer CPerl
+;; Prefer CPerl
 (defalias 'perl-mode 'cperl-mode)
 (add-hook 'cperl-mode-hook
           (lambda ()
-            (setq cperl-indent-level 4
-                  cperl-close-paren-offset -4
+            (setq cperl-close-paren-offset -4
                   cperl-continued-statement-offset 0
                   cperl-indent-parens-as-block t)))
 
