@@ -9,6 +9,7 @@
 (load (locate-user-emacs-file "bindings.el"))
 (load (locate-user-emacs-file "enablers.el"))
 (add-to-list 'load-path (locate-user-emacs-file "dtrt-indent"))
+(add-to-list 'load-path (locate-user-emacs-file "diff-hl"))
 
 (let ((case-fold-search t))
   (when (string-match "mccoyj1" (user-login-name))
@@ -19,6 +20,11 @@
   (when (fboundp mode) (funcall mode -1)))
 (column-number-mode 1)
 (load-theme 'wombat)
+(require 'diff-hl)
+(global-diff-hl-mode)
+(unless (window-system)
+  (require 'diff-hl-margin)
+  (diff-hl-margin-mode))
 
 ;; whitespace
 (setq-default c-basic-offset 4
