@@ -1,0 +1,10 @@
+[DEFAULT]
+include = cat /usr/share/mr/git-subtree
+git_subtree_test = true
+checkout = true
+
+[diff-hl]
+update = git_subtree_update --squash --prefix=.emacs.d/diff-hl https://github.com/dgutov/diff-hl.git master
+
+[dtrt-indent]
+update = git_subtree_update --squash --prefix=.emacs.d/dtrt-indent https://github.com/jscheid/dtrt-indent.git master
