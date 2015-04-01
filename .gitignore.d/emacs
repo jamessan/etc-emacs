@@ -19,9 +19,9 @@
 !/.emacs.d/dtrt-indent/README.md
 !/.emacs.d/enablers.el
 !/.emacs.d/init.el
+!/.emacs.d/lisp
+!/.emacs.d/lisp/CSIu.el
 !/.emacs.d/.mrconfig
-!/.emacs.d/term
-!/.emacs.d/term/screen-256color.el
 !/.emacs.d/work.el
 !/.gitignore.d
 !/.gitignore.d/emacs

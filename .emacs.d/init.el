@@ -8,6 +8,7 @@
 
 (load (locate-user-emacs-file "bindings.el"))
 (load (locate-user-emacs-file "enablers.el"))
+(add-to-list 'load-path (locate-user-emacs-file "lisp"))
 (add-to-list 'load-path (locate-user-emacs-file "dtrt-indent"))
 (add-to-list 'load-path (locate-user-emacs-file "diff-hl"))
 
@@ -23,6 +24,7 @@
 (require 'diff-hl)
 (global-diff-hl-mode)
 (unless (window-system)
+  (require 'CSIu)
   (require 'diff-hl-margin)
   (diff-hl-margin-mode))
 
