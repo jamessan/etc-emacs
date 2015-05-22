@@ -39,6 +39,9 @@
   '(progn
      (add-to-list 'c-default-style (cons 'c-mode "k&r"))
      (add-to-list 'c-default-style (cons 'c++-mode "stroustrup"))))
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (c-set-offset 'case-label '+)))
 (add-hook 'prog-mode-hook 'show-paren-mode)
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (add-hook 'prog-mode-hook 'dtrt-indent-mode)
