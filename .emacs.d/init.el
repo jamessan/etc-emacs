@@ -19,6 +19,8 @@
 ;; UI
 (dolist (mode '(tool-bar-mode scroll-bar-mode menu-bar-mode blink-cursor-mode))
   (when (fboundp mode) (funcall mode -1)))
+(add-to-list 'default-frame-alist
+             '(font . "monospace-10"))
 (column-number-mode 1)
 (load-theme 'wombat)
 (require 'diff-hl)
